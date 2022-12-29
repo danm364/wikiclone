@@ -8,8 +8,8 @@
     <h1>All Pages</h1>
 
     <ul>
-        {% for entry in entries %}
-            <li href="{% url 'entry' %}">{{ entry }}</li>
+        {% for item in entries %}
+            <li><a href="{% url 'page_entry' item %}">{{ item }}</a></li>
         {% endfor %}
     </ul>
 
