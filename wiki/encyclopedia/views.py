@@ -10,12 +10,14 @@ def index(request):
     })
 #how do i make sure im passing the correct variable?
 def entry(request, title):
-    if util.get_entry(title) == None:
+    page_title = title
+    if util.get_entry(page_title) == None:
         return HttpResponse("Requested Page Was Not Found")
     
     else: 
         return render(request, "encyclopedia/entry.html", {
-       "entry": util.get_entry(title)
-    }, title)
+       "entry": util.get_entry(page_title),
+       "page_title": page_title
+    })
     
     
